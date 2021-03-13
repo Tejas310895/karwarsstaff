@@ -21,7 +21,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="dashboard/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="dashboard/images/favicon.png" />
+  <link rel="shortcut icon" href="images/falcon.png" />
 </head>
 
 <body>
