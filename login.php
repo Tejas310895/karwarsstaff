@@ -124,7 +124,7 @@
 
             echo "<script>alert('Logged in. Welcome Back')</script>";
 
-            echo "<script>window.open('index.?dashboard','_self')</script>";
+            echo "<script>window.open('index.php?dashboard','_self')</script>";
 
         }else{
 
