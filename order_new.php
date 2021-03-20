@@ -81,4 +81,4 @@
 <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.bootstrap.js' defer></script>
 <script src='https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.js' defer></script>
 <script  src='js/datatable.js'></script>
-<script  src='js/create_order.js'></script>
+<script  src='js/create_order.js?v=1'></script>

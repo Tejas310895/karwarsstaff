@@ -144,6 +144,8 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '#confirm_order', function () {
+        var isSure = confirm("Are you the Sure?");
+        if(isSure===true){
         var cust_address = $('#cust_address').val();
         var confirm_order = $("#cust_con_contact").val();
         if(!$("#search_contact").val()){
@@ -157,7 +159,7 @@ $(document).ready(function () {
                 success: function (data) {
                     if(data==1){
                         alert('Order Generated Successfully');
-                        window.open('./index.?order_new','_self');
+                        window.open('./index.php?order_new','_self');
                     }else{
                         alert('Order Generation Failed');
                     }
@@ -165,6 +167,7 @@ $(document).ready(function () {
             });
 
          }
+        }
     });
     
     $(document).on('click', '#register_customer', function () {
