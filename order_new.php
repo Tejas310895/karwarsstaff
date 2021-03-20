@@ -69,9 +69,9 @@
     </div>
 </div>
     <script>
-        // window.onbeforeunload = function(event) {
-        //     return confirm("Confirm refresh");
-        // };
+        window.onbeforeunload = function(event) {
+            return confirm("Confirm refresh");
+        };
     </script>
 <script src='https://code.jquery.com/jquery-1.12.4.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.js'></script>
