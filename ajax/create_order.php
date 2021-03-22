@@ -525,7 +525,7 @@ if(isset($_POST['cust_cart'])){
 
                     if($total<300){
                         $dchar=$row_dchr['del_charges'];
-                        $grand_total = $total+$dchar."DCH Applied";
+                        $grand_total = $total+$dchar."<small>(+".$dchar."DL)</small>";
                     }else{
                         $grand_total = $total;
                     }
