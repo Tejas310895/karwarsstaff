@@ -519,6 +519,17 @@ if(isset($_POST['cust_cart'])){
                     $you_save = $save_total-$total;
                     $counter = ++$counter;
 
+                    $get_dchr = "select * from admins";
+                    $run_dchr = mysqli_query($con,$get_dchr);
+                    $row_dchr = mysqli_fetch_array($run_dchr);
+
+                    if($total<300){
+                        $dchar=$row_dchr['del_charges'];
+                        $grand_total = $total+$dchar."DCH Applied";
+                    }else{
+                        $grand_total = $total;
+                    }
+
         echo "
         <div class='row'>
             <div class='col-md-2 px-0'>
@@ -554,7 +565,7 @@ if(isset($_POST['cust_cart'])){
                 <div class='row py-1'>
                     <div class='col-7'>
                         <h5 class='mb-1 card-title text-white'>Item Count :- $counter</h5>
-                        <h4 class='mb-0 card-title text-white'>Total :- $total/-</h4>
+                        <h4 class='mb-0 card-title text-white'>Total :- $grand_total</h4>
                     </div>
                     <div class='col-5'>
                         <button id='confirm_order' class='btn btn-primary btn-block' role='button'>Place Order</button>
