@@ -369,7 +369,7 @@ if(isset($_POST['cust_pro_key']) && isset($_POST['cust_pro'])){
     $row_cust_count = mysqli_num_rows($run_cust_c_id);
 
     $cust_c_id = $row_cust_c_id['customer_id'];
-    $cust_c_ip = $row_cust_c_id['customer_ip'];
+    //$cust_c_ip = $row_cust_c_id['customer_ip'];
 
     $get_products = "select * from products where LOWER(product_keywords) LIKE LOWER('%$cust_pro_key%') and product_visibility='Y'";
                 
@@ -519,16 +519,6 @@ if(isset($_POST['cust_cart'])){
                     $you_save = $save_total-$total;
                     $counter = ++$counter;
 
-                    $get_dchr = "select * from admins";
-                    $run_dchr = mysqli_query($con,$get_dchr);
-                    $row_dchr = mysqli_fetch_array($run_dchr);
-
-                    if($total<300){
-                        $dchar=$row_dchr['del_charges'];
-                        $grand_total = $total+$dchar." <small>(+".$dchar."DL)</small>";
-                    }else{
-                        $grand_total = $total;
-                    }
 
         echo "
         <div class='row'>
@@ -565,7 +555,20 @@ if(isset($_POST['cust_cart'])){
                 <div class='row py-1'>
                     <div class='col-7'>
                         <h5 class='mb-1 card-title text-white'>Item Count :- $counter</h5>
-                        <h4 class='mb-0 card-title text-white'>Total :- $grand_total</h4>
+                        <h4 class='mb-0 card-title text-white'>Total :- ";
+
+                        if($total<300 && $total>0){
+                            $get_dchr = "select * from admins";
+                            $run_dchr = mysqli_query($con,$get_dchr);
+                            $row_dchr = mysqli_fetch_array($run_dchr);
+                            $dchar=$row_dchr['del_charges'];
+        
+                            echo $total+$dchar." <small>(+".$dchar."DL)</small>";
+                        }else{
+                            echo "$total";
+                        }
+                        
+                        echo "</h4>
                     </div>
                     <div class='col-5'>
                         <button id='confirm_order' class='btn btn-primary btn-block' role='button'>Place Order</button>
@@ -1011,7 +1014,7 @@ if(isset($_POST['cust_reset_pass'])){
 
     function rand_string( $length ) {
 
-        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        $chars = "0123456789";
         return substr(str_shuffle($chars),0,$length);
         
         }
