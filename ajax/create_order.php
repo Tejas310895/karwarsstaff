@@ -875,7 +875,7 @@ if(isset($_POST['staff_c_name']) && isset($_POST['staff_c_contact']) && isset($_
     if($run_customer){
         $key = "EALz6t0ZsHkQ9WPx";
         $senderid="VRNEAR";	$route= 1;
-        $text = "Thank%20You%20for%20Registration%20Please%20Login%20with%20Below%20Details%0aUsername:%20$c_email%0aPassword:%20$pass";
+        $text = "Thank%20You%20for%20Registration%20Please%20Login%20on%20www.karwars.in";
 
         //echo $url = "https://smsapi.engineeringtgr.com/send/?Mobile=9636286923&Password=DEZIRE&Message=".$m."&To=".$tel."&Key=parasnovxRI8SYDOwf5lbzkZc6LC0h"; 
         //  $url = "http://api.bulksmsplans.com/api/SendSMS?api_id=API31873059460&api_password=W3cy615F&sms_type=T&encoding=T&sender_id=VRNEAR&phonenumber=91$c_contact&textmessage=$text";
